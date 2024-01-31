@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+
+
 public class PublicationService {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -39,19 +41,29 @@ public class PublicationService {
             System.out.println("An exception occurred. Resetting data members to zero values.");
             resetToZeroValues(book, tape);
         } finally {
-            System.out.println("\nBook Details:");
-            displayPublicationDetails(book);
-
-            System.out.println("\nTape Details:");
-            displayPublicationDetails(tape);
+            if (book != null) {
+                System.out.println("\nBook Details:");
+                displayBookDetails(book);
+            }
+            if (tape != null) {
+                System.out.println("\nTape Details:");
+                displaTapeDetails(tape);
+            }
 
             scanner.close();
         }
     }
 
-    private static void displayPublicationDetails(Publication publication) {
-        System.out.println("Title: " + publication.title);
-        System.out.println("Price: " + publication.price);
+    private static void displayBookDetails(Book book) {
+        System.out.println("Title: " + book.title);
+        System.out.println("Price: " + book.price);
+        System.out.println("Page Count: " + book.pageCount);
+    }
+
+    private static void displaTapeDetails(Tape tape) {
+        System.out.println("Title: " + tape.title);
+        System.out.println("Price: " + tape.price);
+        System.out.println("Playing Time: " + tape.playingTime);
     }
 
     private static void resetToZeroValues(Book book, Tape tape) {

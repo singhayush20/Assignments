@@ -1,5 +1,5 @@
 
-class Publication {
+public class Publication {
     String title;
     float price;
 
@@ -8,9 +8,3 @@ class Publication {
         this.price = price;
     }
 }
-
-
-
-
-
-
