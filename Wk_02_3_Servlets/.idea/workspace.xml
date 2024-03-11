@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b517cf0-9091-4146-a38f-7f13a3701c97" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Soft Copies/Wk01_AyushSingh.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Soft Copies/Wk01_AyushSingh.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Soft Copies/Wk01_AyushSingh02.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Soft Copies/Wk01_AyushSingh02.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_1_AyushSingh/_01_CommonElementsInArrays.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_1_AyushSingh/_02_SecondLargestElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_1_AyushSingh/_03_SubarraysWithZeroSum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/LibraryManagementSystem/LibraryManagementSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/LibraryManagementSystem/entity/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/LibraryManagementSystem/entity/IssueRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/LibraryManagementSystem/entity/LibraryBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/LibraryManagementSystem/entity/Publisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/PublicationUtil/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/PublicationUtil/Publication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/PublicationUtil/PublicationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk01_2_AyushSingh/PublicationUtil/Tape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk02_AyushSingh/Program1_NameInitials.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk02_AyushSingh/Program2_Concatenate2Strings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk02_AyushSingh/Program3_StringFuncs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk02_AyushSingh/Program4_PalindromeString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Wk02_AyushSingh/Program5_PrintDuplicateCharacters.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2dXAU1XYE26ppOPKwwV8dzA6H3G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b517cf0-9091-4146-a38f-7f13a3701c97" name="Changes" comment="" />
+      <created>1710144064363</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710144064363</updated>
+    </task>
+    <servers />
+  </component>
+</project>
