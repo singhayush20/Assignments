@@ -29,7 +29,7 @@ public class Shipment {
     @Column(name = "shipment_token", unique = true, nullable = false)
     private String shipmentCode;
 
-    @Column(name="current_shipment_location", nullable = false,unique = true)
+    @Column(name="current_shipment_location", nullable = false)
     private String currentShipmentLocation;
 
     @Column(name="order_token", nullable = false,unique = true)

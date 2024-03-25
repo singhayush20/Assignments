@@ -27,8 +27,8 @@ public class ShipmentServiceImpl implements ShipmentService {
 
     @Transactional
     @Override
-    public Boolean cancelShipment(String shipmentCode) {
-       shipmentRepository.deleteByShipmentToken(shipmentCode);
+    public Boolean cancelShipment(String orderToken) {
+       shipmentRepository.deleteByOrderToken(orderToken);
        return true;
     }
 }
