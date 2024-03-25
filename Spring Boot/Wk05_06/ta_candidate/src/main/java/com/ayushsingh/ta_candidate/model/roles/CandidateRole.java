@@ -14,9 +14,9 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
-@Entity(name = "consumer_role")
-public class ConsumerRole {
+@Table(name = "ta_candidate_role")
+@Entity
+public class CandidateRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
@@ -32,8 +32,8 @@ public class ConsumerRole {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ConsumerRole that = (ConsumerRole) o;
-        return Objects.equals(roleId, that.roleId) && Objects.equals(roleName, that.roleName) && Objects.equals(consumers, that.consumers);
+        CandidateRole that = (CandidateRole) o;
+        return Objects.equals(roleId, that.roleId) && Objects.equals(roleName, that.roleName) && Objects.equals(candidates, that.candidates);
     }
 
     @Override

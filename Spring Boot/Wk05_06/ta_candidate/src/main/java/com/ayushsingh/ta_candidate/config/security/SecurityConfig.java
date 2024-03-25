@@ -1,29 +1,24 @@
-package com.ayushsingh.cacmp_backend.config.security;
+package com.ayushsingh.ta_candidate.config.security;
 
-import com.ayushsingh.cacmp_backend.config.security.authProvider.ConsumerAuthProvider;
-import com.ayushsingh.cacmp_backend.config.security.authProvider.DepartmentAuthProvider;
-import com.ayushsingh.cacmp_backend.config.security.authProvider.UserAuthProvider;
+import com.ayushsingh.ta_candidate.config.security.authProvider.AdminAuthProvider;
+import com.ayushsingh.ta_candidate.config.security.authProvider.CandidateAuthProvider;
+import com.ayushsingh.ta_candidate.constants.AppConstants;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.session.SessionRegistry;
-import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.session.HttpSessionEventPublisher;
 import org.springframework.web.cors.CorsConfiguration;
 
 import java.util.List;
 
-import static com.ayushsingh.cacmp_backend.constants.AppConstants.PUBLIC_URLS;
 
 @Configuration
 @EnableWebSecurity
@@ -32,18 +27,15 @@ import static com.ayushsingh.cacmp_backend.constants.AppConstants.PUBLIC_URLS;
 public class SecurityConfig {
 
 
-
-
     private final AuthenticationEntryPoint authEntryPoint;
-    private final ConsumerAuthProvider consumerAuthProvider;
-    private final DepartmentAuthProvider departmentAuthProvider;
-    private final UserAuthProvider userAuthProvider;
+    private final CandidateAuthProvider candidateAuthProvider;
+    private final AdminAuthProvider adminAuthProvider;
     private final CustomAccessDeniedHandler customAccessDeniedHandler;
 
 
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
-        authenticationManagerBuilder.authenticationProvider(consumerAuthProvider).authenticationProvider(userAuthProvider).authenticationProvider(departmentAuthProvider);
+        authenticationManagerBuilder.authenticationProvider(candidateAuthProvider).authenticationProvider(adminAuthProvider);
 
         return authenticationManagerBuilder.build();
     }
@@ -60,45 +52,16 @@ public class SecurityConfig {
 
         http.cors().configurationSource(request -> {
             CorsConfiguration configuration = new CorsConfiguration();
-            configuration.setAllowedOrigins(List.of("http://localhost:5173"));
+            configuration.setAllowedOrigins(List.of("*"));
             configuration.setAllowedMethods(List.of("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
             configuration.setAllowCredentials(true);
             configuration.addExposedHeader("Message");
             configuration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
             return configuration;
-        })
-                .and()
-                .csrf()
-                .disable()
-                .authorizeHttpRequests()
-                .requestMatchers(PUBLIC_URLS)
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
-                .exceptionHandling()
-                .authenticationEntryPoint(authEntryPoint)
-                .accessDeniedHandler(customAccessDeniedHandler)
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-
+        }).and().csrf().disable().authorizeHttpRequests().requestMatchers(AppConstants.PUBLIC_URLS).permitAll().anyRequest().authenticated().and().exceptionHandling().authenticationEntryPoint(authEntryPoint).accessDeniedHandler(customAccessDeniedHandler).and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.addFilterBefore(customAuthenticationFilter(http), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
-    }
-
-
-    @Bean
-    public SessionRegistry sessionRegistry() {
-        return new SessionRegistryImpl();
-    }
-
-
-    @Bean
-    public HttpSessionEventPublisher httpSessionEventPublisher() {
-        return new HttpSessionEventPublisher();
     }
 }

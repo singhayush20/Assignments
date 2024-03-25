@@ -2,6 +2,7 @@ package com.ayushsingh.ta_candidate.config.security.service;
 
 
 import com.ayushsingh.ta_candidate.model.entity.Candidate;
+import com.ayushsingh.ta_candidate.model.securityModels.entity.SecurityCandidate;
 import com.ayushsingh.ta_candidate.repository.CandidateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class ConsumerDetailsService implements UserDetailsService {
+public class CandidateDetailsService implements UserDetailsService {
 
 
     private final CandidateRepository candidateRepository;
@@ -21,6 +22,6 @@ public class ConsumerDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<Candidate> candidate = candidateRepository.findByCandidateEmail(username);
 
-        return user.map(SecurityConsumer::new).orElse(null);
+        return candidate.map(SecurityCandidate::new).orElse(null);
     }
 }

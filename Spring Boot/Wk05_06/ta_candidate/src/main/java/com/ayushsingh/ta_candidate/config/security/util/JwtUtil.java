@@ -1,6 +1,6 @@
-package com.ayushsingh.cacmp_backend.config.security.util;
+package com.ayushsingh.ta_candidate.config.security.util;
 
-import com.ayushsingh.cacmp_backend.constants.AppConstants;
+import com.ayushsingh.ta_candidate.constants.AppConstants;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

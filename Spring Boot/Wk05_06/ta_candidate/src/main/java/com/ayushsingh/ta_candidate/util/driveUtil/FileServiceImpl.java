@@ -1,10 +1,9 @@
-package com.ayushsingh.cacmp_backend.util.driveUtil;
+package com.ayushsingh.ta_candidate.util.driveUtil;
 
-import com.ayushsingh.cacmp_backend.config.drive.DriveConfigurationProperties;
-import com.ayushsingh.cacmp_backend.models.dtos.driveFileDtos.UploadedFileDto;
-import com.ayushsingh.cacmp_backend.util.exceptionUtil.ApiException;
+
+import com.ayushsingh.ta_candidate.config.drive.DriveConfigurationProperties;
+import com.ayushsingh.ta_candidate.util.exceptionUtil.ApiException;
 import com.google.api.client.http.FileContent;
-
 import com.google.api.services.drive.Drive;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -26,7 +25,7 @@ public class FileServiceImpl implements FileService{
             if (multipartFile.isEmpty()) {
                throw new ApiException("File is empty!");
             }
-            File file = File.createTempFile("alert_file", null);
+            File file = File.createTempFile("resume", null);
             multipartFile.transferTo(file);
             com.google.api.services.drive.model.File fileMetaData = new com.google.api.services.drive.model.File();
             fileMetaData.setName(multipartFile.getOriginalFilename());

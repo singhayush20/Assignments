@@ -1,4 +1,4 @@
-package com.ayushsingh.cacmp_backend.config.drive;
+package com.ayushsingh.ta_candidate.config.drive;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

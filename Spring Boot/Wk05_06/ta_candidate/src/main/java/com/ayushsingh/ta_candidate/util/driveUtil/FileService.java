@@ -1,6 +1,5 @@
-package com.ayushsingh.cacmp_backend.util.driveUtil;
+package com.ayushsingh.ta_candidate.util.driveUtil;
 
-import com.ayushsingh.cacmp_backend.models.dtos.driveFileDtos.UploadedFileDto;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface FileService {

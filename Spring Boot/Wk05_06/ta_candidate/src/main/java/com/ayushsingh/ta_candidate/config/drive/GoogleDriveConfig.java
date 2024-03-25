@@ -1,9 +1,9 @@
-package com.ayushsingh.cacmp_backend.config.drive;
+package com.ayushsingh.ta_candidate.config.drive;
 
-import com.ayushsingh.cacmp_backend.util.exceptionUtil.ApiException;
-import com.google.api.client.json.JsonFactory;
+import com.ayushsingh.ta_candidate.util.exceptionUtil.ApiException;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;

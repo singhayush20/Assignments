@@ -4,7 +4,6 @@ import com.ayushsingh.ta_candidate.config.security.service.CandidateDetailsServi
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
 @Component
-public class ConsumerAuthProvider implements AuthenticationProvider {
+public class CandidateAuthProvider implements AuthenticationProvider {
 
     private final CandidateDetailsService candidateDetailsService;
     private final PasswordEncoder passwordEncoder;
@@ -23,15 +22,12 @@ public class ConsumerAuthProvider implements AuthenticationProvider {
         String username = String.valueOf(authentication.getPrincipal());
         String password=String.valueOf(authentication.getCredentials());
 
-        UserDetails consumerDetails = candidateDetailsService.loadUserByUsername(username);
-        if(consumerDetails!=null){
-            if(passwordEncoder.matches(password,consumerDetails.getPassword())){
-                if(consumerDetails.isEnabled()){
-                    return new UsernamePasswordAuthenticationToken(username,password,consumerDetails.getAuthorities());
-                }
-                else{
-                    throw new DisabledException("Account has not been verified");
-                }
+        UserDetails candidateDetails = candidateDetailsService.loadUserByUsername(username);
+        if(candidateDetails!=null){
+            if(passwordEncoder.matches(password,candidateDetails.getPassword())){
+
+                    return new UsernamePasswordAuthenticationToken(username,password,candidateDetails.getAuthorities());
+
             }
         }
         throw new BadCredentialsException("Wrong Credentials");

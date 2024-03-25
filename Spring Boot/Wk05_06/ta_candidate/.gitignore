@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/cacmp-417114-3b716d377f0a.json
+/src/main/resources/secrets.properties

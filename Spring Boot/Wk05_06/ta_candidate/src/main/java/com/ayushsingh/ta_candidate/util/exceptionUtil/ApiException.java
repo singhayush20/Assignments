@@ -1,4 +1,4 @@
-package com.ayushsingh.cacmp_backend.util.exceptionUtil;
+package com.ayushsingh.ta_candidate.util.exceptionUtil;
 /*
  * ApiException- class representing custom exceptions thrown in the business logic, for sending a response to the client
  */

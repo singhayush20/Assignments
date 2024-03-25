@@ -1,4 +1,4 @@
-package com.ayushsingh.ta_candidate.model.dto;
+package com.ayushsingh.ta_candidate.model.dto.candidateDtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

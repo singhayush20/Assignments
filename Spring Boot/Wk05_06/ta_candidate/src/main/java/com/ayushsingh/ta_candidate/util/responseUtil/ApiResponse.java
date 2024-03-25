@@ -1,7 +1,6 @@
-package com.ayushsingh.cacmp_backend.util.responseUtil;
+package com.ayushsingh.ta_candidate.util.responseUtil;
 
-import com.ayushsingh.cacmp_backend.constants.AppConstants;
-
+import com.ayushsingh.ta_candidate.constants.AppConstants;
 import lombok.Getter;
 import lombok.Setter;
 

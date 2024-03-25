@@ -1,4 +1,4 @@
-package com.ayushsingh.cacmp_backend.models.dtos.authDtos;
+package com.ayushsingh.ta_candidate.model.dto.authDtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

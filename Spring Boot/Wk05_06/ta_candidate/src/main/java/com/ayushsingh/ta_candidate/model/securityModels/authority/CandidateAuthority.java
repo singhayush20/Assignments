@@ -1,19 +1,17 @@
-package com.ayushsingh.cacmp_backend.models.securityModels.authority;
+package com.ayushsingh.ta_candidate.model.securityModels.authority;
 
+import com.ayushsingh.ta_candidate.model.roles.CandidateRole;
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 
-import com.ayushsingh.cacmp_backend.models.roles.ConsumerRole;
-
-import lombok.AllArgsConstructor;
-
 @AllArgsConstructor
-public class ConsumerAuthority implements GrantedAuthority {
+public class CandidateAuthority implements GrantedAuthority {
 
-    private final ConsumerRole consumerRole;
+    private final CandidateRole candidateRole;
 
     @Override
     public String getAuthority() {
-        return this.consumerRole.getRoleName();
+        return this.candidateRole.getRoleName();
     }
 
 }

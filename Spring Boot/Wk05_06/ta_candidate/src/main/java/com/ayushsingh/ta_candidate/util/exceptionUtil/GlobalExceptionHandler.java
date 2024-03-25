@@ -1,7 +1,8 @@
-package com.ayushsingh.cacmp_backend.util.exceptionUtil;
+package com.ayushsingh.ta_candidate.util.exceptionUtil;
 
-import com.ayushsingh.cacmp_backend.constants.AppConstants;
-import com.ayushsingh.cacmp_backend.util.responseUtil.ApiResponse;
+
+import com.ayushsingh.ta_candidate.constants.AppConstants;
+import com.ayushsingh.ta_candidate.util.responseUtil.ApiResponse;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureException;
@@ -10,8 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
-import java.nio.file.AccessDeniedException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -28,17 +27,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(apiResponse, HttpStatus.OK);
     }
 
-    @ExceptionHandler(DuplicateVoteException.class)
-    public ResponseEntity<ApiResponse<String>> handleDuplicateVoteException(DuplicateVoteException e){
-        ApiResponse<String> apiResponse=new ApiResponse<>(AppConstants.DUPLICATE_VOTE_CODE,AppConstants.DUPLICATE_VOTE_MESSAGE,e.getMessage());
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
-    }
 
-    @ExceptionHandler(RefreshTokenExpiredException.class)
-    public ResponseEntity<ApiResponse<String>> handleRefreshTokenExpiredException(RefreshTokenExpiredException e){
-        ApiResponse<String> apiResponse=new ApiResponse<>(AppConstants.REFRESH_TOKEN_EXPIRED,AppConstants.ERROR_RESPONSE,e.getMessage());
-        return new ResponseEntity<>(apiResponse, HttpStatus.OK);
-    }
 
     @ExceptionHandler(MalformedJwtException.class)
     public ResponseEntity<ApiResponse<String>> handleMalformedJwtException(MalformedJwtException e){

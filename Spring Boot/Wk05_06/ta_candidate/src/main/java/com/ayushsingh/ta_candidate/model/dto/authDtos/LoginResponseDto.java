@@ -1,4 +1,4 @@
-package com.ayushsingh.cacmp_backend.models.dtos.authDtos;
+package com.ayushsingh.ta_candidate.model.dto.authDtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,8 +11,6 @@ import lombok.Setter;
 @Setter
 public class LoginResponseDto {
 
-    private String token;
     private String accessToken;
-    private String refreshToken;
     private String username;
 }

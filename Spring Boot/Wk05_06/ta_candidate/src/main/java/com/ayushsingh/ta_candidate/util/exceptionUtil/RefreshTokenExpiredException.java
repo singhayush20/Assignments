@@ -1,4 +1,4 @@
-package com.ayushsingh.cacmp_backend.util.exceptionUtil;
+package com.ayushsingh.ta_candidate.util.exceptionUtil;
 
 public class RefreshTokenExpiredException extends RuntimeException {
 
