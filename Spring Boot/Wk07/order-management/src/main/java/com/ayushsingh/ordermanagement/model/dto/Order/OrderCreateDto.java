@@ -1,6 +1,5 @@
 package com.ayushsingh.ordermanagement.model.dto.Order;
 
-import com.ayushsingh.ordermanagement.model.dto.Product.OrderItemDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

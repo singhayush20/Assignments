@@ -33,7 +33,7 @@ public class Product {
     @Column(name = "stock_quantity", nullable = false)
     private Long stockQuantity;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "product", cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.DETACH,CascadeType.REFRESH}, orphanRemoval = true)
     private Set<OrderItem> orderItems = new HashSet<>();
 
 

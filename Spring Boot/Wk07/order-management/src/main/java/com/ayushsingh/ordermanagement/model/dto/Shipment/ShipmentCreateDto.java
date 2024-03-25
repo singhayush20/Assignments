@@ -1,4 +1,4 @@
-package com.ayushsingh.ordermanagement.model.dto.Order;
+package com.ayushsingh.ordermanagement.model.dto.Shipment;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderUpdateDto {
-
-    private String address;
-    private String customerName;
+public class ShipmentCreateDto {
+    private String orderToken;
 }

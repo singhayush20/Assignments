@@ -4,7 +4,8 @@ import com.ayushsingh.ordermanagement.model.constants.OrderStatus;
 import com.ayushsingh.ordermanagement.model.dto.Order.OrderCreateDto;
 import com.ayushsingh.ordermanagement.model.dto.Order.OrderDetailsDto;
 import com.ayushsingh.ordermanagement.model.dto.Order.OrderUpdateDto;
-import com.ayushsingh.ordermanagement.model.dto.Product.OrderItemDto;
+import com.ayushsingh.ordermanagement.model.dto.Order.OrderItemDto;
+import com.ayushsingh.ordermanagement.model.dto.Shipment.ShipmentCreateDto;
 import com.ayushsingh.ordermanagement.model.entity.Order;
 import com.ayushsingh.ordermanagement.model.entity.OrderItem;
 import com.ayushsingh.ordermanagement.model.entity.Product;
@@ -15,22 +16,31 @@ import com.ayushsingh.ordermanagement.repository.ProductRepository;
 import com.ayushsingh.ordermanagement.service.OrderService;
 import com.ayushsingh.ordermanagement.util.exceptionUtil.ApiException;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClient;
 
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
-@RequiredArgsConstructor
+@Slf4j
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
     private final OrderItemRepository orderItemRepository;
     private final ProductRepository productRepository;
+    private final RestClient restClient;
+
+    public OrderServiceImpl(OrderRepository orderRepository, OrderItemRepository orderItemRepository, ProductRepository productRepository) {
+        this.orderRepository = orderRepository;
+        this.orderItemRepository = orderItemRepository;
+        this.productRepository = productRepository;
+        this.restClient = RestClient.builder()
+                .baseUrl("http://localhost:8086")
+                .build();
+    }
 
     @Override
     public String placeNewOrder(OrderCreateDto orderCreateDto) {
@@ -39,6 +49,7 @@ public class OrderServiceImpl implements OrderService {
         order.setOrderStatus(OrderStatus.PLACED);
         order.setAddress(orderCreateDto.getAddress());
         order.setCustomerName(orderCreateDto.getCustomerName());
+        order.setOrderToken(UUID.randomUUID().toString());
         Set<OrderItemDto> itemList = orderCreateDto.getProducts();
         Set<OrderItem> orderItems = new HashSet<>();
         if (itemList.isEmpty()) {
@@ -48,7 +59,7 @@ public class OrderServiceImpl implements OrderService {
             OrderItem orderItem = new OrderItem();
             orderItem.setQuantity(orderItemDto.getQuantity());
             orderItem.setOrder(order);
-            Product product = productRepository.findByProductToken(orderItemDto.getProductName()).orElseThrow(() -> new ApiException("Product with id: " + orderItemDto.getProductName() + " not found!"));
+            Product product = productRepository.findByProductToken(orderItemDto.getProductToken()).orElseThrow(() -> new ApiException("Product with id: " + orderItemDto.getProductToken() + " not found!"));
             if (product.getStockQuantity() < orderItemDto.getQuantity()) {
                 throw new ApiException("Insufficient stock for product: " + product.getProductName());
             }
@@ -56,7 +67,23 @@ public class OrderServiceImpl implements OrderService {
             orderItems.add(orderItem);
         }
         order.setOrderItems(orderItems);
+        ShipmentCreateDto shipmentCreateDto = new ShipmentCreateDto();
+        shipmentCreateDto.setOrderToken(order.getOrderToken());
+       Map<String,Object> response = restClient.post()
+                .uri("/api/v1/shipment/create")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(shipmentCreateDto)
+                .retrieve()
+                .body(Map.class);
+       log.debug("Response: " + response);
+       Integer code=(Integer) response.get("code");
+       if(code!=2000){
+           throw new ApiException("Shipment could not be created!");
+       }
+        Map<String,Object> responseData=(Map<String,Object>) response.get("data");
+        order.setShipmentCode((String) responseData.get("shipmentCode"));
         orderRepository.save(order);
+
         return "Order with id: " + order.getOrderToken() + " created successfully!";
     }
 
@@ -79,7 +106,16 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     @Override
     public String cancelOrder(String orderToken) {
+        orderItemRepository.deleteByOrderToken(orderToken);
         orderRepository.deleteByOrderToken(orderToken);
+        Map<String,Object> response = restClient.delete()
+                .uri("/api/v1/shipment/cancel/{orderToken}", orderToken)
+                .retrieve()
+                .body(Map.class);
+        Integer responseCode=(Integer) response.get("code");
+        if(responseCode!=2000){
+            throw new ApiException("Shipment could not be deleted!");
+        }
         return "Order with id: " + orderToken + " deleted successfully!";
     }
 
@@ -94,7 +130,7 @@ public class OrderServiceImpl implements OrderService {
         order.setAddress(orderUpdateDto.getAddress());
         order.setCustomerName(orderUpdateDto.getCustomerName());
         orderRepository.save(order);
-        return orderUpdateDto.getOrderToken();
+        return orderToken;
     }
 
     @Override

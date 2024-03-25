@@ -12,6 +12,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ApiException.class)
     public ResponseEntity<ApiResponse<String>> handleApiException(ApiException e) {
+        e.printStackTrace();
         return new ResponseEntity<>(new ApiResponse<>(AppConstants.ERROR_RESPONSE, e.getMessage(), AppConstants.ERROR_CODE), HttpStatus.OK);
     }
 }

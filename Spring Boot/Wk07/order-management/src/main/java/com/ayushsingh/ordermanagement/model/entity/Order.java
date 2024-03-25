@@ -39,9 +39,19 @@ public class Order {
     @Column(name="customer_name",nullable = false)
     private String customerName;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Column(name="shipment_code",unique = true)
+    private String shipmentCode;
+
+    @OneToMany(mappedBy = "order", cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.DETACH,CascadeType.REFRESH}, orphanRemoval = true)
     private Set<OrderItem> orderItems = new HashSet<>();
 
+    @PreRemove
+    private void preRemove() {
+        for (OrderItem orderItem : orderItems) {
+            orderItem.setOrder(null);
+        }
+        orderItems.clear();
+    }
 
     @CreatedDate
     @CreationTimestamp
@@ -53,10 +63,6 @@ public class Order {
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @PrePersist
-    public void prePersist() {
-        orderToken= UUID.randomUUID().toString();
-    }
 
 
     @Override
