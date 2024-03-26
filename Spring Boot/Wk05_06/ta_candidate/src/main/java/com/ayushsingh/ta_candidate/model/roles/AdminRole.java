@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Objects;
 import java.util.Set;
 
 @Getter
@@ -26,4 +27,17 @@ public class AdminRole {
 
     @ManyToMany(mappedBy = "roles")
     private Set<Admin> admins;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AdminRole adminRole = (AdminRole) o;
+        return Objects.equals(roleId, adminRole.roleId) && Objects.equals(roleName, adminRole.roleName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(roleId, roleName);
+    }
 }

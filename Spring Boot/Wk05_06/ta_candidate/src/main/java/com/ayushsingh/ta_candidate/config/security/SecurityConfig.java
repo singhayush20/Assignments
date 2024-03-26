@@ -58,7 +58,19 @@ public class SecurityConfig {
             configuration.addExposedHeader("Message");
             configuration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
             return configuration;
-        }).and().csrf().disable().authorizeHttpRequests().requestMatchers(AppConstants.PUBLIC_URLS).permitAll().anyRequest().authenticated().and().exceptionHandling().authenticationEntryPoint(authEntryPoint).accessDeniedHandler(customAccessDeniedHandler).and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        })
+                .and()
+                .csrf()
+                .disable()
+                .authorizeHttpRequests()
+                .requestMatchers(AppConstants.PUBLIC_URLS).permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .exceptionHandling()
+                .authenticationEntryPoint(authEntryPoint)
+                .accessDeniedHandler(customAccessDeniedHandler)
+                .and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.addFilterBefore(customAuthenticationFilter(http), UsernamePasswordAuthenticationFilter.class);
 
