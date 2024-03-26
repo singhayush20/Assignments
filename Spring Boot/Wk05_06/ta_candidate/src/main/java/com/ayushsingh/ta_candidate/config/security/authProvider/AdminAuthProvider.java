@@ -24,11 +24,11 @@ public class AdminAuthProvider implements AuthenticationProvider {
         String username = String.valueOf(authentication.getPrincipal());
         String password = String.valueOf(authentication.getCredentials());
 
-        UserDetails candidateDetails = adminDetailsService.loadUserByUsername(username);
-        if (candidateDetails != null) {
-            if (passwordEncoder.matches(password, candidateDetails.getPassword())) {
+        UserDetails adminDetails = adminDetailsService.loadUserByUsername(username);
+        if (adminDetails != null) {
+            if (passwordEncoder.matches(password, adminDetails.getPassword())) {
 
-                return new UsernamePasswordAuthenticationToken(username, password, candidateDetails.getAuthorities());
+                return new UsernamePasswordAuthenticationToken(username, password, adminDetails.getAuthorities());
 
             }
         }
@@ -37,6 +37,6 @@ public class AdminAuthProvider implements AuthenticationProvider {
 
     @Override
     public boolean supports(Class<?> authentication) {
-        return false;
+        return UsernamePasswordAuthenticationToken.class.equals(authentication);
     }
 }

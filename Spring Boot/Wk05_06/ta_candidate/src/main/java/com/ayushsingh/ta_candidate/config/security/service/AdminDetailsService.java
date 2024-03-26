@@ -18,8 +18,8 @@ public class AdminDetailsService implements UserDetailsService {
     private final AdminRepository adminRepository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<Admin> candidate =adminRepository.findByCandidateEmail(username);
+        Optional<Admin> admin =adminRepository.findByAdminEmail(username);
 
-        return candidate.map(SecurityAdmin::new).orElse(null);
+        return admin.map(SecurityAdmin::new).orElse(null);
     }
 }

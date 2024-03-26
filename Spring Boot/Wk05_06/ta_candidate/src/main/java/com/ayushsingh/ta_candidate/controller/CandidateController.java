@@ -13,6 +13,7 @@ import com.ayushsingh.ta_candidate.util.responseUtil.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -50,6 +51,7 @@ public class CandidateController {
         return new ResponseEntity<>(new ApiResponse<>(candidateService.getCandidateDetails(candidateEmail)), HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('ROLE_CANDIDATE')")
     @PostMapping("/resume/upload")
     public ResponseEntity<ApiResponse<String>> uploadFile(@RequestParam("candidateToken") String candidateToken, @RequestPart("file") MultipartFile multipartFile) {
         return new ResponseEntity<>(new ApiResponse<>(resumeService.uploadResume(candidateToken, multipartFile)), HttpStatus.CREATED);

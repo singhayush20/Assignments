@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface AdminRepository extends JpaRepository<Admin, Long> {
 
     @Query("SELECT a FROM Admin a WHERE a.adminEmail = ?1")
-    Optional<Admin> findByCandidateEmail(String username);
+    Optional<Admin> findByAdminEmail(String username);
 }

@@ -6,9 +6,9 @@ import java.time.ZonedDateTime;
 
 public interface InterviewListProjection {
 
-    Long getInterviewToken();
+    String getInterviewToken();
 
-    Long getInterviewSubject();
+    String getInterviewSubject();
 
     ZonedDateTime getInterviewTime();
 

@@ -35,7 +35,6 @@ public class InterviewServiceImpl implements InterviewService {
     private final CandidateRepository candidateRepository;
     private final ModelMapper modelMapper;
     private final ResumeRepository resumeRepository;
-
     @Override
     public String scheduleInterview(InterviewCreateDto interviewCreateDto) {
         Candidate candidate = candidateRepository.findByCandidateToken(interviewCreateDto.getCandidateToken()).orElseThrow(() -> new ApiException("Candidate not found"));
@@ -86,8 +85,8 @@ public class InterviewServiceImpl implements InterviewService {
         interviewDetailsDto.setInterviewStatus(interview.getInterviewStatus());
         interviewDetailsDto.setMeetLink(interview.getMeetLink());
         interviewDetailsDto.setMeetTime(interview.getMeetTime());
-
-        InterviewResultDto interviewResultDto = this.modelMapper.map(interview.getInterviewResult(), InterviewResultDto.class);
+        InterviewResult interviewResult=interview.getInterviewResult();
+        InterviewResultDto interviewResultDto = this.modelMapper.map(interviewResult, InterviewResultDto.class);
         interviewDetailsDto.setInterviewResult(interviewResultDto);
 
         Resume resume = resumeRepository.findByCandidateToken(candidateToken).orElseThrow(() -> new ApiException("Resume not found"));
@@ -104,6 +103,7 @@ public class InterviewServiceImpl implements InterviewService {
         interviewResult.setInterview(interview);
         interviewResult.setFeedback(interviewResultCreateDto.getFeedback());
         interviewResult.setDecision(interviewResultCreateDto.getDecision());
+        interview.setInterviewResult(interviewResult);
         return interviewRepository.save(interview).getInterviewToken();
     }
 

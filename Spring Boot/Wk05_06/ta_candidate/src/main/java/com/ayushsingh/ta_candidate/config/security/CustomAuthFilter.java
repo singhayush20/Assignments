@@ -86,7 +86,7 @@ public class CustomAuthFilter extends OncePerRequestFilter {
         }
         //-if not a login uri, check for access token
         else {
-            String headerToken =null;//-obtain token from cookie
+            String headerToken =null;
                 headerToken = request.getHeader(AUTH_HEADER); //-if no token, obtain token from header
             //-if still not found, return
             if (headerToken == null) {
