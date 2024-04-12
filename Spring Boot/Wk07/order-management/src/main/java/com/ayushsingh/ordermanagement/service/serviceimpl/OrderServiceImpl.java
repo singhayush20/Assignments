@@ -3,8 +3,8 @@ package com.ayushsingh.ordermanagement.service.serviceimpl;
 import com.ayushsingh.ordermanagement.model.constants.OrderStatus;
 import com.ayushsingh.ordermanagement.model.dto.Order.OrderCreateDto;
 import com.ayushsingh.ordermanagement.model.dto.Order.OrderDetailsDto;
-import com.ayushsingh.ordermanagement.model.dto.Order.OrderUpdateDto;
 import com.ayushsingh.ordermanagement.model.dto.Order.OrderItemDto;
+import com.ayushsingh.ordermanagement.model.dto.Order.OrderUpdateDto;
 import com.ayushsingh.ordermanagement.model.dto.Shipment.ShipmentCreateDto;
 import com.ayushsingh.ordermanagement.model.entity.Order;
 import com.ayushsingh.ordermanagement.model.entity.OrderItem;
@@ -21,7 +21,6 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
-
 import java.util.*;
 
 @Service
@@ -37,9 +36,7 @@ public class OrderServiceImpl implements OrderService {
         this.orderRepository = orderRepository;
         this.orderItemRepository = orderItemRepository;
         this.productRepository = productRepository;
-        this.restClient = RestClient.builder()
-                .baseUrl("http://localhost:8086")
-                .build();
+        this.restClient = RestClient.builder().baseUrl("http://localhost:8086").build();
     }
 
     @Override
@@ -69,18 +66,13 @@ public class OrderServiceImpl implements OrderService {
         order.setOrderItems(orderItems);
         ShipmentCreateDto shipmentCreateDto = new ShipmentCreateDto();
         shipmentCreateDto.setOrderToken(order.getOrderToken());
-       Map<String,Object> response = restClient.post()
-                .uri("/api/v1/shipment/create")
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(shipmentCreateDto)
-                .retrieve()
-                .body(Map.class);
-       log.debug("Response: " + response);
-       Integer code=(Integer) response.get("code");
-       if(code!=2000){
-           throw new ApiException("Shipment could not be created!");
-       }
-        Map<String,Object> responseData=(Map<String,Object>) response.get("data");
+        Map<String, Object> response = restClient.post().uri("/api/v1/shipment/create").contentType(MediaType.APPLICATION_JSON).body(shipmentCreateDto).retrieve().body(Map.class);
+        log.debug("Response: " + response);
+        Integer code = (Integer) response.get("code");
+        if (code != 2000) {
+            throw new ApiException("Shipment could not be created!");
+        }
+        Map<String, Object> responseData = (Map<String, Object>) response.get("data");
         order.setShipmentCode((String) responseData.get("shipmentCode"));
         orderRepository.save(order);
 
@@ -108,12 +100,9 @@ public class OrderServiceImpl implements OrderService {
     public String cancelOrder(String orderToken) {
         orderItemRepository.deleteByOrderToken(orderToken);
         orderRepository.deleteByOrderToken(orderToken);
-        Map<String,Object> response = restClient.delete()
-                .uri("/api/v1/shipment/cancel/{orderToken}", orderToken)
-                .retrieve()
-                .body(Map.class);
-        Integer responseCode=(Integer) response.get("code");
-        if(responseCode!=2000){
+        Map<String, Object> response = restClient.delete().uri("/api/v1/shipment/cancel/{orderToken}", orderToken).retrieve().body(Map.class);
+        Integer responseCode = (Integer) response.get("code");
+        if (responseCode != 2000) {
             throw new ApiException("Shipment could not be deleted!");
         }
         return "Order with id: " + orderToken + " deleted successfully!";
