@@ -1,13 +1,7 @@
 package org.ayushsingh.jdbc_jpa_demo;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JdbcJpaDemoApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
-
+public class JdbcJpaDemoApplicationTests_JUnit {
 }
