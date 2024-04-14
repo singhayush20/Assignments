@@ -12,12 +12,27 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of the UserService interface to manage user-related operations.
+ * This service class provides methods to create, retrieve, update, and delete user information.
+ *
+ * @author Ayush Singh
+ * @since 2024-04-12
+ * @version 1.0.0
+ */
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 
+
+    /**
+     * Create a new user with the provided details.
+     *
+     * @param userRegisterDto The details of the user to be created.
+     * @return UserDetailsDto with the details of the created user.
+     */
     @Override
     public UserDetailsDto createUser(UserRegisterDto userRegisterDto) {
         User newUser = new User();
@@ -37,6 +52,13 @@ public class UserServiceImpl implements UserService {
                 .build();
     }
 
+
+    /**
+     * Retrieve user details by userId.
+     *
+     * @param userId The unique identifier of the user.
+     * @return UserDetailsDto with the details of the user if found, otherwise null.
+     */
     @Override
     public UserDetailsDto getUser(Long userId) {
         Optional<User> user = userRepository.findById(userId);
@@ -52,6 +74,12 @@ public class UserServiceImpl implements UserService {
                 .build();
     }
 
+
+    /**
+     * Retrieve details of all users.
+     *
+     * @return List<UserDetailsDto> with details of all users.
+     */
     @Override
     public List<UserDetailsDto> getAllUsers() {
         List<User> users = userRepository.findAll();
@@ -66,11 +94,24 @@ public class UserServiceImpl implements UserService {
         }).collect(Collectors.toList());
     }
 
+
+    /**
+     * Delete a user by userId.
+     *
+     * @param userId The unique identifier of the user to be deleted.
+     */
     @Override
     public void deleteUser(Long userId) {
         userRepository.deleteById(userId);
     }
 
+
+    /**
+     * Update user details.
+     *
+     * @param userDto The updated details of the user.
+     * @return UserDetailsDto with the updated user details if found, otherwise null.
+     */
     @Override
     public UserDetailsDto updateUser(UserDetailsDto userDto) {
         Optional<User> userOptional = userRepository.findById(userDto.getUserId());

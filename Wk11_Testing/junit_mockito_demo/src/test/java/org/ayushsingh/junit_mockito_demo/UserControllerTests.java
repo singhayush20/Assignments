@@ -11,6 +11,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+
+/**
+ * Tests for the {@link org.ayushsingh.junit_mockito_demo.controller.UserController}.
+ * These tests use RestAssured to interact with the UserController endpoints.
+ *
+ * @author Ayush Singh
+ * @since 2024-04-12
+ * @version 1.0.0
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @TestMethodOrder(OrderAnnotation.class)
 public class UserControllerTests {

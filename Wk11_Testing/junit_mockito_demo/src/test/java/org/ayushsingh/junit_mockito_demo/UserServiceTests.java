@@ -22,6 +22,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.*;
 
+
+/**
+ * Unit tests for the {@link UserServiceImpl}.
+ * This class tests the CRUD operations using Mockito
+ *
+ * @author Ayush Singh
+ * @since 2024-04-12
+ * @version 1.0.0
+ */
 @ExtendWith(SpringExtension.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class UserServiceTests {
@@ -49,7 +58,7 @@ public class UserServiceTests {
         UserDetailsDto actualUserDto = userService.createUser(userRegisterDto);
 
 
-        assertNotNull(actualUserDto.getUserId()); // Check if userId is not null
+        assertNotNull(actualUserDto.getUserId());
         assertEquals(userRegisterDto.getUsername(), actualUserDto.getUsername());
         assertEquals(userRegisterDto.getName(), actualUserDto.getName());
         assertEquals(userRegisterDto.getEmail(), actualUserDto.getEmail());
