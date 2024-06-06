@@ -6,8 +6,15 @@ import org.ayushsingh.jdbc_jpa_demo.dto.department.DepartmentDetailsDto;
 import org.ayushsingh.jdbc_jpa_demo.dto.project.ProjectDetailsDto;
 
 import java.time.LocalDate;
-import java.time.LocalDate;
 
+
+/**
+ * DTO for details of {@link org.ayushsingh.jdbc_jpa_demo.entity.Employee}.
+ *
+ * @author Ayush Singh
+ * @version 1.0
+ * @since 2024-04-12
+ */
 @Getter
 @Setter
 @NoArgsConstructor

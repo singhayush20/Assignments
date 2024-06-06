@@ -73,7 +73,6 @@ public class DBOperations {
      * @param newPrice  The new price to set for the product.
      * @throws SQLException If a SQL exception occurs while executing the update query.
      */
-    // -update product price
     public static void updateProductPrice(int productId, double newPrice) throws SQLException {
         String updateQuery = "UPDATE products SET product_price = ? WHERE product_id = ?";
         try (Connection conn = DBUtil.getConnection(); PreparedStatement preparedStatement = conn.prepareStatement(updateQuery)) {

@@ -1,0 +1,15 @@
+org.ayushsingh.jdbc_jpa_demo
+org.ayushsingh.jdbc_jpa_demo.config
+org.ayushsingh.jdbc_jpa_demo.constants
+org.ayushsingh.jdbc_jpa_demo.controller
+org.ayushsingh.jdbc_jpa_demo.dao
+org.ayushsingh.jdbc_jpa_demo.dao.impl
+org.ayushsingh.jdbc_jpa_demo.dto.department
+org.ayushsingh.jdbc_jpa_demo.dto.employee
+org.ayushsingh.jdbc_jpa_demo.dto.project
+org.ayushsingh.jdbc_jpa_demo.entity
+org.ayushsingh.jdbc_jpa_demo.service
+org.ayushsingh.jdbc_jpa_demo.service.impl
+org.ayushsingh.jdbc_jpa_demo.util.dbUtil
+org.ayushsingh.jdbc_jpa_demo.util.exceptionUtil
+org.ayushsingh.jdbc_jpa_demo.util.responseUtil

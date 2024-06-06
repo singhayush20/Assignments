@@ -7,7 +7,7 @@ import org.ayushsingh.jdbc_jpa_demo.dto.project.ProjectCreateDto;
 import org.ayushsingh.jdbc_jpa_demo.dto.project.ProjectDetailsDto;
 
 /**
- * Service interface for managing employee-related operations.
+ * Service interface for managing {@link org.ayushsingh.jdbc_jpa_demo.entity.Employee}-related operations.
  * Defines methods for creating, deleting, and updating employees, as well as assigning departments and projects.
  *
  * @author Ayush Singh

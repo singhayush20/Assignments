@@ -6,9 +6,17 @@ import jakarta.persistence.EntityManagerFactory;
 import lombok.RequiredArgsConstructor;
 import org.ayushsingh.jdbc_jpa_demo.dao.DepartmentDao;
 import org.ayushsingh.jdbc_jpa_demo.entity.Department;
-import org.hibernate.property.access.spi.PropertyAccessException;
 import org.springframework.stereotype.Component;
 
+
+/**
+ * Implementation of the {@link DepartmentDao} interface for performing CRUD operations related to employees.
+ * Uses JPA for database interaction.
+ *
+ * @author Ayush Singh
+ * @version 1.0
+ * @since 2024-04-12
+ */
 @Component
 @RequiredArgsConstructor
 public class DepartmentDaoImpl implements DepartmentDao {
@@ -16,6 +24,12 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
 
 
+    /**
+     * Creates a new department in the database.
+     *
+     * @param department The department object to be created.
+     * @return The created department object.
+     */
     @Override
     public Department create(Department department) {
 

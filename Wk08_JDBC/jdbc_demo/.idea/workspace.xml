@@ -1,52 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fe97f8c-bf18-42b2-8a15-807410e69dca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/DepartmentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/EmployeeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/ProjectDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/impl/DepartmentDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/impl/EmployeeDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/impl/ProjectDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/ProjectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/impl/DepartmentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/impl/ProjectServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/config/PersistenceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/constants/AppConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/controller/DepartmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dao/DepartmentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dao/EmployeeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dao/impl/DepartmentDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dao/impl/EmployeeDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dto/department/DepartmentCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dto/department/DepartmentDetailsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dto/employee/EmployeeCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dto/employee/EmployeeDetailsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dto/project/ProjectCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dto/project/ProjectDetailsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/entity/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/entity/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/entity/Project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/service/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/service/impl/DepartmentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/util/dbUtil/DBUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/util/exceptionUtil/ApiException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/util/exceptionUtil/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/util/responseUtil/ApiResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Spring Boot/Wk07/order-management/src/main/java/com/ayushsingh/ordermanagement/constants/AppConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Spring Boot/Wk07/order-management/src/main/java/com/ayushsingh/ordermanagement/constants/AppConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Spring Boot/Wk07/order-management/src/main/java/com/ayushsingh/ordermanagement/service/serviceimpl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Spring Boot/Wk07/order-management/src/main/java/com/ayushsingh/ordermanagement/service/serviceimpl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Wk02_03_Servlets/Calculator_webapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Wk02_03_Servlets/Calculator_webapp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/.idea/JetClient/state.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/config/PersistenceConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/DepartmentDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/EmployeeDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/ProjectDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/impl/DepartmentDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/impl/EmployeeDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/dao/impl/ProjectDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/entity/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/entity/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/entity/Project.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/DepartmentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/EmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/ProjectService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/impl/DepartmentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/impl/EmployeeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/main/java/com/ayushsingh/service/impl/ProjectServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/hibernate_demo/src/test/java/com/ayushsingh/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dao/impl/DepartmentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dao/impl/DepartmentDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dto/employee/EmployeeDetailsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Wk09_Hibernate/jdbc_jpa_demo/src/main/java/org/ayushsingh/jdbc_jpa_demo/dto/employee/EmployeeDetailsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk11_Testing/junit_mockito_demo/src/main/java/org/ayushsingh/junit_mockito_demo/dto/UserDetailsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Wk11_Testing/junit_mockito_demo/src/main/java/org/ayushsingh/junit_mockito_demo/dto/UserDetailsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Wk11_Testing/junit_mockito_demo/src/main/java/org/ayushsingh/junit_mockito_demo/dto/UserRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Wk11_Testing/junit_mockito_demo/src/main/java/org/ayushsingh/junit_mockito_demo/dto/UserRegisterDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,31 +54,31 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2f0GKxkpz2wEeEOe9PUHcUh5zrg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Incture Assignments/Wk08_JDBC/jdbc_demo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "application.passwordSafe",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Incture Assignments/Wk08_JDBC/jdbc_demo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;application.passwordSafe&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
@@ -132,6 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712930521636</updated>
       <workItem from="1712930523071" duration="1924000" />
+      <workItem from="1713098600477" duration="127000" />
     </task>
     <servers />
   </component>

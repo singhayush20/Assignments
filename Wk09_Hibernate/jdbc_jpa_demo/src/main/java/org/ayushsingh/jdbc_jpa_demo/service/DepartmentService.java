@@ -5,7 +5,7 @@ import org.ayushsingh.jdbc_jpa_demo.dto.department.DepartmentDetailsDto;
 
 
 /**
- * Service interface for managing department-related operations.
+ * Service interface for managing {@link org.ayushsingh.jdbc_jpa_demo.entity.Department}-related operations.
  * Defines a method for creating departments.
  *
  * @author Ayush Singh
